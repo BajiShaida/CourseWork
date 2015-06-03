@@ -10,6 +10,6 @@ htmltotext<-function(url)
   html <- getURL(url, followlocation = TRUE)
   doc = htmlParse(html, asText =TRUE)
   plain.text <- xpathSApply(doc, "//p", xmlValue)
-  sink("D:/baji/projects/exe.txt",append=TRUE)
+  write.table(plain.text,"D:/baji/projects/exe.txt")
   print(plain.text)
 }
