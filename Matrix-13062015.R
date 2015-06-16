@@ -35,3 +35,81 @@ mata1
 ##5(c)
 mata2<-matrix(outer(0:8,0:8,'-'),nrow = 9,ncol = 9)%%9
 mata2
+##6.
+x<-c(7,-1,-3,5,17)
+x
+matr<-matrix(0,ncol = 5,nrow = 5)
+matr
+abs(col(matr)-row(matr))+1
+
+##7.(a)
+set.seed(75)
+aMat<-matrix(sample(10,size=60,replace = T),nrow = 6)
+aMat
+for(i in c(1:6))
+{
+        count=0
+        for(j in c(1:10))
+        {
+                if(aMat[i,j]>4)
+                        count<-count+1
+        }
+        print(count)   
+}
+##Another Way 
+aMat[which(aMat>4)]
+##7.(b)
+for(i in c(1:6))
+{
+        count=0
+        for(j in c(1:10))
+        {
+                if(aMat[i,j]==7)
+                        count<-count+1
+        }
+        if(count==2)
+                print(i)   
+}
+##7.(c)
+
+for(i in c(1:10))
+{
+        a<-sum(aMat[,i])
+        print(a)
+}
+
+##8.(a)
+tot=0
+for(i in c(1:20))
+{
+        for(j in c(1:5))
+        {
+                ha<-(i^4/(3+j)) 
+                tot=tot+ha
+        }
+}
+print(tot)
+
+##8.(b)
+tot1=0
+for(i in c(1:20))
+{
+        for(j in c(1:5))
+        {
+                ha<-(i^4/(3+(i*j))) 
+                tot1=tot1+ha
+        }
+}
+print(tot1)
+
+##8.(c)
+tot2=0
+for(i in c(1:10))
+{
+        for(j in c(1:i))
+        {
+                ha<-(i^4/(3+(i*j)))
+                tot2=tot2+ha
+        }
+}
+print(tot2)
